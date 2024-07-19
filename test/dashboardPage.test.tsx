@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import DashboardPage from './DashboardPage'; // Asegúrate de que la ruta de importación sea correcta
+import DashboardPage from './DashboardPage';
 
 describe('DashboardPage', () => {
   test('se renderiza sin errores', () => {
@@ -14,5 +14,4 @@ describe('DashboardPage', () => {
     expect(screen.getByText(/contenido específico del dashboard/i)).toBeInTheDocument();
   });
 
-  // Aquí puedes agregar más pruebas, como interacciones o verificar que ciertos elementos se muestren correctamente
 });
