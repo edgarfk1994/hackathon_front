@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './css/home.css';
+import React, { useState } from 'react';
+import axios from 'axios';
+import ContactPage from './pages/dashboard'; 
+import TicketPage from './pages/ticket'; 
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
+
+const App: React.FC = () => {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/dashboard" element={<ContactPage />} />
+        <Route path="/ticket" element={<TicketPage />} />
+      </Routes>
+      
+      <div className="links-container">
+
+        <Link to="/ticket" className="dashboard-link">
+          Generar tickets
+        </Link>
+      
+        <Link to="/dashboard" className="dashboard-link">
+          Ir al Dashboard
+        </Link>
+      </div>
+    </Router>
   );
-}
+};
+
 
 export default App;
